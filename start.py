@@ -80,15 +80,14 @@ def execute(universal_config, model_config):
     optimizer = get_optimizer(universal_config, model)
     scheduler = get_scheduler(universal_config, optimizer)
 
-    # 打印 日志分割信息
     Mylogger_instance.logger.info('#----------Amp Info----------#')
     if universal_config.automatic_mixed_precision:
         log_info = '\tEnabled Automatic Mixed Precision'
     else:
         log_info = '\tDisabled Automatic Mixed Precision'
-    # 打印 日志信息
     Mylogger_instance.logger.info(log_info)
     print(log_info)
+    
     grad_scaler = torch.cuda.amp.GradScaler(enabled=universal_config.automatic_mixed_precision)
 
     print('Step7: Set Pretrain Model')
@@ -105,7 +104,6 @@ def execute(universal_config, model_config):
     max_score_loss = 9999
     max_score_bias = 9999
 
-    # 占位符
     max_dice_mIOU = 0
     max_dice_loss = 9999
     max_score_dice = 0
@@ -179,7 +177,6 @@ def execute(universal_config, model_config):
                 Mylogger_instance.log_and_print_custom_info(
                     f'min_loss.pth Updated: epoch:{min_loss_epoch}, loss:{min_loss:.4f}', indent=True)
 
-        # 若 mIOU与dice 不为空
         if (mIOU is not None) and (dice is not None):
             if dice > max_dice:
                 refresh_ALASR = True
@@ -191,11 +188,9 @@ def execute(universal_config, model_config):
                            max_score_epoch, max_score_loss, max_score_bias, loss, model, optimizer, scheduler,
                            'max_dice.pth', universal_config)
                 if (epoch / universal_config.total_epochs) >= universal_config.result_interval:
-                    # 打印 日志信息
                     Mylogger_instance.log_and_print_custom_info(
                         f'max_dice.pth Updated: epoch:{max_dice_epoch}, dice:{max_dice:.4f}, mIOU:{max_dice_mIOU:.4f}, loss:{max_dice_loss:.4f}', indent=True)
 
-                # 计算 当前的loss偏差
                 loss_bias = loss - min_loss
                 if loss_bias < max_score_bias and loss_bias != 0:
                     max_score_loss = loss
@@ -208,7 +203,6 @@ def execute(universal_config, model_config):
                                'max_score.pth', universal_config)
 
                     if (epoch / universal_config.total_epochs) >= universal_config.result_interval:
-                        # 打印 日志信息
                         Mylogger_instance.log_and_print_custom_info(
                             f'max_score.pth Updated: epoch:{max_score_epoch}, dice:{max_score_dice:.4f}, mIOU:{max_score_mIOU:.4f}, loss:{max_score_loss:.4f}, bias: {max_score_bias:.4f}', indent=True)
 
@@ -340,3 +334,4 @@ if __name__ == '__main__':
     else:
         raise Exception('model in not right!')
     execute(universal_config, model_config)
+
