@@ -15,8 +15,8 @@ class UniversalConfig:
         else:
             self.pretrain_model_path = None
 
-        #                            0         1         2         3         4         5           6            7          8           9           10
-        self.support_dataset_list = ['BUSI_1', 'BUSI_2', 'BUSI_3', 'BUSI_4', 'BUSI_5', 'BrEaST_1', 'BrEaST_2', 'BrEaST_3', 'BrEaST_4', 'BrEaST_5', 'STU']
+        #                            0         1         2         3         4         5           6            7          8           9           10         11         12         13         14          15
+        self.support_dataset_list = ['BUSI_1', 'BUSI_2', 'BUSI_3', 'BUSI_4', 'BUSI_5', 'BrEaST_1', 'BrEaST_2', 'BrEaST_3', 'BrEaST_4', 'BrEaST_5', 'UDIAT_1', 'UDIAT_2', 'UDIAT_3', 'UDIAT_4', 'UDIAT_5', 'STU']
         self.execute_dataset = self.support_dataset_list[execute_dataset_index]
         self.dataset_directory = self.project_directory / 'datasets' / self.execute_dataset
 
