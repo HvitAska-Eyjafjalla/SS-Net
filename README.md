@@ -32,7 +32,7 @@ SS-Net-main
 
 ## Usage
 PVT Backbone pre-trained pth: <br>
-https://github.com/whai362/PVT
+https://github.com/whai362/PVT <br>
 ---
 
 ### **Installation**
@@ -88,4 +88,5 @@ This article has been submitted for peer-review in the journal called *IEEE Tran
 
 ## Contact
 For technical questions, please contact yanagiama@gmail.com .
+
 
