@@ -16,7 +16,6 @@ def train_one_epoch(train_dataloader, model, criterion, optimizer, scheduler, gr
     model.train()
     loss_list = []
 
-    # 创建 tqdm进度条
     with tqdm.tqdm(total=len(train_dataloader), desc=f'Training[{epoch}/{config.total_epochs}]',
                    unit='Batch') as pbar:
         for iter, data in enumerate(train_dataloader):
@@ -259,4 +258,5 @@ def calculate_hd95(np_prediction, np_target, input_size):
 
 def np_array_binarization(np_array, threshold):
     return np.where(np_array >= threshold, 1, 0)
+
 
