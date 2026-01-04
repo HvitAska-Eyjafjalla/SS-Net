@@ -251,7 +251,7 @@ def execute(universal_config, model_config):
                 print(
                     f'\tCurrent training used time: {total_time / 60:.2f} minutes. Estimated total remaining time: {total_estimated_remaining_time / 60:.2f} minutes. Estimated remaining time at early stop point: {early_stop_estimated_remaining_time / 60:.2f} minutes.')
 
-    max_memory_allocated = torch.cuda.max_memory_allocated(universal_config.device) / 1024 ** 2  # 以MB为单位
+    max_memory_allocated = torch.cuda.max_memory_allocated(universal_config.device) / 1024 ** 2
     Mylogger_instance.log_and_print_custom_info(f'\nTraining Ends: \n' \
                                                 f'\t\t Maximum CUDA memory usage:{max_memory_allocated:.2f} MB \n'
                                                 f'\t\t min_loss.pth info : epoch:{min_loss_epoch}, loss:{min_loss:.4f}\n' \
@@ -334,4 +334,5 @@ if __name__ == '__main__':
     else:
         raise Exception('model in not right!')
     execute(universal_config, model_config)
+
 
