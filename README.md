@@ -77,11 +77,11 @@ python test.py
 ## Citation
 
 Our repo is useful for your research, please consider citing our article. <br>
-This article has been submitted for peer-review in the journal called *IEEE Transactions on Medical Imaging*.<br>
+This article has been submitted for peer-review in the journal called *Pattern Recognition*.<br>
 ```bibtex
 @ARTICLE{SS-Net,
   author  = {Zirui Yan, Shiren Li, Qian Dong and Guangguang Yang},
-  journal = {IEEE Transactions on Medical Imaging}
+  journal = {Pattern Recognition}
   title   = {SS-Net: Semantic-aware and Spectrum-guided Network for Ultrasound Image Breast Tumor Segmentation},
   year    = {2026}
 }
@@ -90,6 +90,7 @@ This article has been submitted for peer-review in the journal called *IEEE Tran
 
 ## Contact
 For technical questions, please contact yanagiama@gmail.com .
+
 
 
 
