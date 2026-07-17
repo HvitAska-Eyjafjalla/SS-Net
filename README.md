@@ -77,11 +77,11 @@ python test.py
 ## Citation
 
 Our repo is useful for your research, please consider citing our article. <br>
-This article has been submitted for peer-review in the journal called *Pattern Recognition*.<br>
+This article has been submitted for peer-review in the journal called *Expert Systems with Applications*.<br>
 ```bibtex
 @ARTICLE{SS-Net,
   author  = {Zirui Yan, Shiren Li, Qian Dong and Guangguang Yang},
-  journal = {Pattern Recognition}
+  journal = {Expert Systems with Applications}
   title   = {SS-Net: Semantic-aware and Spectrum-guided Network for Ultrasound Image Breast Tumor Segmentation},
   year    = {2026}
 }
